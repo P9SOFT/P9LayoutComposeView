@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHU-0d-Kzg" userLabel="P9LayoutComposeView" customClass="P9LayoutComposeView">
+                                <rect key="frame" x="16" y="28" width="343" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="UT4-cJ-vuH"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="godzilla" translatesAutoresizingMaskIntoConstraints="NO" id="WC0-E6-b4k" userLabel="Godzilla Image View">
+                                <rect key="frame" x="235" y="287" width="53" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WC0-E6-b4k" secondAttribute="height" multiplier="53:93" id="4ex-6S-mrU"/>
+                                    <constraint firstAttribute="width" constant="53" id="QxS-kZ-SB3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingghidorah" translatesAutoresizingMaskIntoConstraints="NO" id="iKc-OQ-tjw" userLabel="Kingghidorah Image View">
+                                <rect key="frame" x="58" y="287" width="142" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iKc-OQ-tjw" secondAttribute="height" multiplier="142:93" id="H5j-i9-SPi"/>
+                                    <constraint firstAttribute="width" constant="142" id="yfl-ix-P2t"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7s-Je-6cw">
+                                <rect key="frame" x="35" y="388" width="202" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Drag and drop monsters
+to compose view.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.64659685860000005" green="0.64659685860000005" blue="0.64659685860000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WC0-E6-b4k" firstAttribute="top" secondItem="iKc-OQ-tjw" secondAttribute="bottom" constant="-93" id="046-75-w4v"/>
+                            <constraint firstItem="iKc-OQ-tjw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="FKl-fi-gJT"/>
+                            <constraint firstItem="WC0-E6-b4k" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-71" id="Ro5-kG-JDw"/>
+                            <constraint firstItem="iKc-OQ-tjw" firstAttribute="top" secondItem="xHU-0d-Kzg" secondAttribute="bottom" constant="19" id="UcX-VH-n5h"/>
+                            <constraint firstItem="xHU-0d-Kzg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mVq-rl-cyl"/>
+                            <constraint firstItem="xHU-0d-Kzg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mhL-07-Nvh"/>
+                            <constraint firstItem="xHU-0d-Kzg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nqF-lu-gO3"/>
+                            <constraint firstItem="WC0-E6-b4k" firstAttribute="top" secondItem="xHU-0d-Kzg" secondAttribute="bottom" constant="19" id="rYC-0M-ILq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="composeView" destination="xHU-0d-Kzg" id="Mqa-TK-Wjs"/>
+                        <outlet property="godzillaImageView" destination="WC0-E6-b4k" id="jPo-Nl-DaN"/>
+                        <outlet property="kingghidorahImageView" destination="iKc-OQ-tjw" id="c7G-w8-WZR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="godzilla" width="116" height="200"/>
+        <image name="kingghidorah" width="301" height="198"/>
+    </resources>
+</document>
