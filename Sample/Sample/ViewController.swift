@@ -23,7 +23,7 @@ class ViewController: UIViewController, P9LayoutComposeViewProtocol {
         
         let param = [P9ViewDraggerLockRotateKey:true, P9ViewDraggerLockScaleKey:true];
         
-        P9ViewDragger.defaultTracker().trackingDecoyView(self.kingghidorahImageView, stageView: self.view, parameters: param, ready: { (trackingView:UIView?) in
+        P9ViewDragger.default().trackingDecoyView(self.kingghidorahImageView, stageView: self.view, parameters: param, ready: { (trackingView:UIView?) in
             self.kingghidorahImageView.alpha = 0.3
         }, trackingHandler: { (trackingView:UIView?) in
             self.hitTestAndUpdateIfNeed(trackingView!)
@@ -35,7 +35,7 @@ class ViewController: UIViewController, P9LayoutComposeViewProtocol {
             }
         }
         
-        P9ViewDragger.defaultTracker().trackingDecoyView(self.godzillaImageView, stageView: self.view, parameters: param, ready: { (trackingView:UIView?) in
+        P9ViewDragger.default().trackingDecoyView(self.godzillaImageView, stageView: self.view, parameters: param, ready: { (trackingView:UIView?) in
             self.godzillaImageView.alpha = 0.3
         }, trackingHandler: { (trackingView:UIView?) in
             self.hitTestAndUpdateIfNeed(trackingView!)
@@ -65,17 +65,17 @@ class ViewController: UIViewController, P9LayoutComposeViewProtocol {
         }
     }
     
-    func p9LayoutComposeView(_ layoutComposeView: P9LayoutComposeView!, willStartTracking anObject: Any!, forKey key: String!) {
+    func p9LayoutComposeView(_ layoutComposeView: P9LayoutComposeView, willStartTracking anObject: Any, forKey key: String) {
         
         print(key+" will start tracking.")
     }
     
-    func p9LayoutComposeView(_ layoutComposeView: P9LayoutComposeView!, didTracking anObject: Any!, forKey key: String!) {
+    func p9LayoutComposeView(_ layoutComposeView: P9LayoutComposeView, didTracking anObject: Any, forKey key: String) {
         
         print(key+" did tracking.")
     }
     
-    func p9LayoutComposeView(_ layoutComposeView: P9LayoutComposeView!, didEndTracking anObject: Any!, forKey key: String!) {
+    func p9LayoutComposeView(_ layoutComposeView: P9LayoutComposeView, didEndTracking anObject: Any, forKey key: String) {
         
         print(key+" did end tracking.")
     }

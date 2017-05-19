@@ -38,7 +38,7 @@
  Return all added view objects
  @returns An array contains all added view objects.
  */
-- (NSArray *)allComponents;
+- (NSArray * _Nullable)allComponents;
 
 /*!
  Return view for key.
@@ -47,14 +47,14 @@
  
  이 메소드는 동기처리됩니다.
  */
-- (id)componentForKey:(NSString *)key;
+- (id _Nullable)componentForKey:(NSString * _Nullable)key;
 
 /*!
  Return key value for given object.
  @param anObject An object to get key
  @returns Key value for given object.
  */
-- (NSString *)keyForComponent:(id)anObject;
+- (NSString * _Nullable)keyForComponent:(id _Nullable)anObject;
 
 /*!
  Add view to subview of P9LayoutComposeView. if given view have already parent view then it'll fail.
@@ -62,7 +62,7 @@
  @param parameters Options for tracking.
  @returns Return key value for added object if succeed. If not, return nil.
  */
-- (NSString *)addComponentObject:(id)anObject parameters:(NSDictionary *)parameters;
+- (NSString * _Nullable)addComponentObject:(id _Nullable)anObject parameters:(NSDictionary * _Nullable)parameters;
 
 /*!
  Add view to subview of P9LayoutComposeView.
@@ -71,13 +71,13 @@
  @param parameters Options for tracking.
  @returns Return key value for added object if succeed. If not, return nil.
  */
-- (NSString *)addDecoyComponentFromObject:(id)anObject parameters:(NSDictionary *)parameters;
+- (NSString * _Nullable)addDecoyComponentFromObject:(id _Nullable)anObject parameters:(NSDictionary * _Nullable)parameters;
 
 /*!
  Remove subview for given key.
  @param key Given key string when adding object.
  */
-- (void)removeComponentForKey:(NSString *)key;
+- (void)removeComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Remove all subviews.
@@ -89,64 +89,64 @@
  @param key Given key string when adding object.
  @returns layout order index.
  */
-- (NSInteger)layerOrderOfComponentForKey:(NSString *)key;
+- (NSInteger)layerOrderOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Increase layout order index of object for given key.
  @param key Given key string when adding object.
  */
-- (void)goUpLayerOrderOfComponentForKey:(NSString *)key;
+- (void)goUpLayerOrderOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Make layout order index to last of object for given key.
  @param key Given key string when adding object.
  */
-- (void)goTopLayerOrderOfComponentForKey:(NSString *)key;
+- (void)goTopLayerOrderOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Decrease layout order index of object for given key.
  @param key Given key string when adding object.
  */
-- (void)goDownLayerOrderOfComponentForKey:(NSString *)key;
+- (void)goDownLayerOrderOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Make layout order index to first of object for given key.
  @param key Given key string when adding object.
  */
-- (void)goBottomLayerOrderOfComponentForKey:(NSString *)key;
+- (void)goBottomLayerOrderOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Return transform structure of object for given key.
  @param key Given key string when adding object.
  @returns transform structure
  */
-- (CATransform3D)transformOfComponentForKey:(NSString *)key;
+- (CATransform3D)transformOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Return previous transform structure of object for given key.
  @param key Given key string when adding object.
  @returns transform structure
  */
-- (CATransform3D)previousTransformOfComponentForKey:(NSString *)key;
+- (CATransform3D)previousTransformOfComponentForKey:(NSString * _Nullable)key;
 
 /*!
  Update transform of object for given key to given transform.
  @param transform transform to update.
  @param key Given key string when adding object.
  */
-- (void)setTransformOfComponent:(CATransform3D)transform forKey:(NSString *)key;
+- (void)setTransformOfComponent:(CATransform3D)transform forKey:(NSString * _Nullable)key;
 
 /*!
  Capture current view by given rate and return UIImage object.
  @param rate Capture rate.
  @returns UIImage object.
  */
-- (UIImage *)captureStageForRate:(CGFloat)rate;
+- (UIImage * _Nullable)captureStageForRate:(CGFloat)rate;
 
 /*!
  The object that get feedback of P9LayoutComposeView act.
  */
-@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak) id _Nullable delegate;
 
 @end
 
@@ -169,7 +169,7 @@
  @param anObject Tracking target component
  @param key Given key string when adding object.
  */
-- (void)p9LayoutComposeView:(P9LayoutComposeView *)layoutComposeView willStartTracking:(id)anObject forKey:(NSString *)key;
+- (void)p9LayoutComposeView:(P9LayoutComposeView * _Nonnull)layoutComposeView willStartTracking:(id _Nonnull)anObject forKey:(NSString * _Nonnull)key;
 
 /*!
  Called when tracking every time that added component to P9LayoutComposeView
@@ -177,7 +177,7 @@
  @param anObject Tracking target component
  @param key Given key string when adding object.
  */
-- (void)p9LayoutComposeView:(P9LayoutComposeView *)layoutComposeView didTracking:(id)anObject forKey:(NSString *)key;
+- (void)p9LayoutComposeView:(P9LayoutComposeView * _Nonnull)layoutComposeView didTracking:(id _Nonnull)anObject forKey:(NSString * _Nonnull)key;
 
 /*!
  Called when ended tracking at once that added component to P9LayoutComposeView
@@ -185,6 +185,6 @@
  @param anObject Tracking target component
  @param key Given key string when adding object.
  */
-- (void)p9LayoutComposeView:(P9LayoutComposeView *)layoutComposeView didEndTracking:(id)anObject forKey:(NSString *)key;
+- (void)p9LayoutComposeView:(P9LayoutComposeView * _Nonnull)layoutComposeView didEndTracking:(id _Nonnull)anObject forKey:(NSString * _Nonnull)key;
 
 @end
